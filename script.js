@@ -1,9 +1,7 @@
 console.log("hello you");
 
-let rock = "rock";
-let paper = "paper";
-let scissor = "scissor";
-
-function getComputerChoice(rock, paper, scissor) {
-  return Math.floor(Math.random(rock, paper, scissor));
+function getComputerChoice() {
+  const choices = ["rock", "paper", "scissors"];
+  const randomChoice = Math.floor(Math.random() * choices.length);
+  return choices[randomChoice];
 }
