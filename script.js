@@ -12,13 +12,13 @@ function getComputerChoice() {
 function getHumanChoice() {
   const choices = ["rock", "paper", "scissors"];
   const getChoices = prompt(`${choices.join("")}`);
-  if (!choices.includes(getChoices.toLowerCase)) {
+  if (!choices.includes(getChoices.toLowerCase())) {
     alert(
       "that is not a choice, please choose either rock, paper, or scissors."
     );
     return getHumanChoice;
   }
-  return getChoices;
+  return getChoices.toLowerCase();
 }
 
 function playRound() {
@@ -39,7 +39,13 @@ function playRound() {
     humanScore++;
   }
 }
-const humanSelection = getHumanChoice();
-const computerSelection = getComputerChoice();
+playRound();
 
-playRound(humanSelection, computerSelection);
+function playGame() {
+  const rounds = 5;
+
+  for (let i = 0; i < rounds; i++) {
+    playRound();
+  }
+}
+playGame();
